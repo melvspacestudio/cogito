@@ -1,4 +1,4 @@
-extends InteractionComponent
+class_name LockInteractionComponent extends InteractionComponent
 
 @onready var parent_node = get_parent() #Grabbing reference to parent
 

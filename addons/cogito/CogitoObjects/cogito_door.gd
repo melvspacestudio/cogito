@@ -167,8 +167,9 @@ func interact(interactor: Node3D):
 
 
 func door_rattle(interactor):
-	audio_stream_player_3d.stream = rattle_sound
-	audio_stream_player_3d.play()
+	if audio_stream_player_3d:
+		audio_stream_player_3d.stream = rattle_sound
+		audio_stream_player_3d.play()
 	interactor.send_hint(null,"I can't open it")
 
 
@@ -215,8 +216,9 @@ func lock_unlock_switch():
 
 
 func unlock_door():
-	audio_stream_player_3d.stream = unlock_sound
-	audio_stream_player_3d.play()
+	if audio_stream_player_3d:
+		audio_stream_player_3d.stream = unlock_sound
+		audio_stream_player_3d.play()
 	is_locked = false
 	lock_interaction_text = interaction_text_when_unlocked	
 	lock_state_updated.emit(lock_interaction_text)
